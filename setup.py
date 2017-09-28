@@ -23,5 +23,5 @@ setup(
     ],
     keywords='Twitter account description',
     py_modules=['finagler', 'bot'],
-    install_requires=['tweepy']
+    install_requires=['tweepy', 'nltk']
 )

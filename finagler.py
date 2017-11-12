@@ -80,7 +80,8 @@ def randomized_profile():
 
 
 def main():
-    print('\n'.join(['%s=%s' % (k, v) for k, v in randomized_profile().iteritems()]))
+    print('\n'.join(['%s=%s' % (k, v)
+                     for k, v in randomized_profile().iteritems()]).encode('utf-8'))
 
 
 if __name__ == '__main__':

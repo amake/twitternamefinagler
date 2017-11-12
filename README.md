@@ -23,7 +23,7 @@ appropriate. Supported `<token>`s:
 
 # Requirements
 
-- Python 2.7
+- Python 2.7 ("wide" build)
 
 # License
 

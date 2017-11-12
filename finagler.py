@@ -25,6 +25,7 @@ with open('profile.properties', encoding='utf-8') as infile:
 adjectives = []
 people = []
 
+
 def load_words(filename):
     if os.path.isfile(filename):
         with open(filename) as f:
@@ -34,6 +35,7 @@ def load_words(filename):
         sys.exit(1)
 
 adjectives = load_words('adjectives.txt')
+
 
 def _character():
     while True:
@@ -48,21 +50,27 @@ def _indefinite_adjective():
     article = 'an' if adj.lower()[0] in 'aeiou' else 'a'
     return '%s %s' % (article, adj)
 
+
 def _adjective():
     return choice(adjectives)
 
+
 def _fix_capitalization(text, location):
     return text[0].upper() + text[1:] if location == 0 else text
+
 
 def _dispatch(match):
     res = globals()['_%s' % match.group('token')]()
     return _fix_capitalization(res, match.start())
 
+
 def randomize(text):
     return replacement_pattern.sub(_dispatch, text) if text else ''
 
+
 def randomized_profile():
     return {key: randomize(value) for key, value in profile.iteritems()}
+
 
 def main():
     print('\n'.join(['%s=%s' % (k, v) for k, v in randomized_profile().iteritems()]))

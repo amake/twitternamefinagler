@@ -24,6 +24,7 @@ auth.set_access_token(credentials['AccessToken'],
 
 api = tweepy.API(auth)
 
+
 def do_tweet(event, context):
     profile = finagler.randomized_profile()
     api.update_profile(**profile)

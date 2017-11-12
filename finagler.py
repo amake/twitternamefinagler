@@ -45,6 +45,13 @@ def _character():
            and mobile_safe_pattern.match(c):
             return c
 
+
+def _enclosing_character():
+    enclosing = [unichr(i) for i in xrange(unicode_min, unicode_max)
+                 if unicodedata.category(unichr(i)) == 'Me']
+    return choice(enclosing)
+
+
 def _indefinite_adjective():
     adj = _adjective()
     article = 'an' if adj.lower()[0] in 'aeiou' else 'a'

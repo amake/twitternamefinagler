@@ -19,6 +19,7 @@ appropriate. Supported `<token>`s:
   - `adjective`: A random adjective
   - `indefinite_adjective`: A random adjective prepended with an appropriate
     indefinite article ("a" or "an")
+  - `enclosing_character`: A random Unicode character of category "mark, enclosing (`Me`)
 
 # Requirements
 
